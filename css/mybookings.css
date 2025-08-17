@@ -1,0 +1,167 @@
+/* Booking Filters */
+.booking-filters {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: #ddd;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.filter-btn.active {
+    background: #3498db;
+    color: white;
+}
+
+/* Bookings Container */
+.bookings-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.booking-card {
+    padding: 1.2rem;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s;
+}
+
+.booking-card:hover {
+    background-color: #f9f9f9;
+}
+
+.booking-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.booking-title {
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.booking-status {
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.status-upcoming {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-past {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.status-cancelled {
+    background-color: #e2e3e5;
+    color: #383d41;
+}
+
+.booking-details {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.booking-detail {
+    display: flex;
+    align-items: center;
+}
+
+.booking-detail i {
+    margin-right: 0.5rem;
+    color: #7f8c8d;
+}
+
+.booking-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.booking-actions button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+}
+
+.view-details-btn {
+    background: #3498db;
+}
+
+.cancel-btn {
+    background: #e74c3c;
+}
+
+.cancel-btn:hover {
+    background: #c0392b;
+}
+
+.no-bookings {
+    text-align: center;
+    padding: 3rem;
+    color: #555;
+}
+
+.no-bookings p {
+    margin-bottom: 1rem;
+}
+
+/* Booking Details Modal */
+.booking-details {
+    display: block;
+}
+
+.booking-details div {
+    margin-bottom: 1rem;
+}
+
+.detail-label {
+    font-weight: 500;
+    color: #555;
+    display: inline-block;
+    min-width: 150px;
+}
+
+.booking-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+/* Cancel Confirmation Modal */
+.cancel-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+#confirm-cancel {
+    background: #e74c3c;
+}
+
+#confirm-cancel:hover {
+    background: #c0392b;
+}
+
+#dont-cancel {
+    background: #7f8c8d;
+}
+
+#dont-cancel:hover {
+    background: #6c757d;
+}

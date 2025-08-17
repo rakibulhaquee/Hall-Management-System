@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - HighSky Campus</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/feedback.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>HighSky Campus</h1>
+            <p>Hall Management System</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="halls.html">Browse Halls</a></li>
+                <li><a href="book-hall.html">Book Hall</a></li>
+                <li><a href="feedback.html" class="active">Feedback</a></li>
+                <li><a href="my-bookings.html">My Bookings</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Feedback Form</h2>
+        <p>We value your feedback. Please let us know about your experience with our hall booking system.</p>
+        
+        <form id="feedback-form">
+            <div class="form-group">
+                <label for="feedback-name">Your Name:</label>
+                <input type="text" id="feedback-name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="feedback-email">Email:</label>
+                <input type="email" id="feedback-email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="feedback-subject">Subject:</label>
+                <select id="feedback-subject">
+                    <option value="general">General Feedback</option>
+                    <option value="booking">Booking Experience</option>
+                    <option value="technical">Technical Issue</option>
+                    <option value="suggestion">Suggestion</option>
+                    <option value="complaint">Complaint</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="feedback-message">Message:</label>
+                <textarea id="feedback-message" rows="5" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="feedback-rating">Rating:</label>
+                <div class="rating">
+                    <input type="radio" id="star5" name="rating" value="5">
+                    <label for="star5">★</label>
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4">★</label>
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3">★</label>
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2">★</label>
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1">★</label>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit Feedback</button>
+        </form>
+        
+        <section class="testimonials">
+            <h3>What Others Say</h3>
+            <div class="testimonial-container">
+                <!-- Testimonials will be loaded dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 BREEZ Campus Hall Management System</p>
+    </footer>
+
+    <!-- Feedback Submission Modal -->
+    <div id="feedback-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Thank You!</h2>
+            <p>Your feedback has been submitted successfully.</p>
+            <button id="close-feedback-modal">Close</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/feedback.js"></script>
+</body>
+</html>
