@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings - HighSky Campus</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mybookings.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>HighSky Campus</h1>
+            <p>Hall Management System</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="halls.html">Browse Halls</a></li>
+                <li><a href="book-hall.html">Book Hall</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="my-bookings.html" class="active">My Bookings</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>My Bookings</h2>
+
+        <div class="booking-filters">
+            <button class="filter-btn active" data-filter="all">All Bookings</button>
+            <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+            <button class="filter-btn" data-filter="past">Past</button>
+            <button class="filter-btn" data-filter="cancelled">Cancelled</button>
+        </div>
+
+        <div class="bookings-container" id="bookings-container">
+            <!-- Bookings will be loaded dynamically -->
+            <div class="no-bookings">
+                <p>You don't have any bookings yet.</p>
+                <a href="halls.html" class="cta-button">Browse Halls</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 BREEZ Campus Hall Management System</p>
+    </footer>
+
+    <!-- Booking Details Modal -->
+    <div id="booking-details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Booking Details</h2>
+            <div class="booking-details">
+                <!-- Booking details will be inserted here -->
+            </div>
+            <div class="booking-actions">
+                <button id="cancel-booking">Cancel Booking</button>
+                <button id="print-booking">Print Details</button>
+                <button id="close-booking-details">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cancel Confirmation Modal -->
+    <div id="cancel-confirmation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Confirm Cancellation</h2>
+            <p>Are you sure you want to cancel this booking?</p>
+            <div class="cancel-actions">
+                <button id="confirm-cancel">Yes, Cancel</button>
+                <button id="dont-cancel">No, Keep Booking</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+
+</html>

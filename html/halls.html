@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Halls - HighSky Campus</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/halls.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>HighSky Campus</h1>
+            <p>Hall Management System</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="halls.html" class="active">Browse Halls</a></li>
+                <li><a href="book-hall.html">Book Hall</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="my-bookings.html">My Bookings</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Available Halls</h2>
+        <div class="filter-section">
+            <div class="filter-group">
+                <label for="capacity">Capacity:</label>
+                <select id="capacity">
+                    <option value="all">All</option>
+                    <option value="50">Up to 50</option>
+                    <option value="100">50-100</option>
+                    <option value="200">100-200</option>
+                    <option value="300">200+</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date">
+            </div>
+            <button id="apply-filters">Apply Filters</button>
+        </div>
+
+        <div class="halls-container" id="halls-container">
+            <!-- Hall cards will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 BREEZ Campus Hall Management System</p>
+    </footer>
+
+    <!-- Hall Details Modal -->
+    <div id="hall-details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="hall-modal-title">Hall Details</h2>
+            <div class="hall-details-content">
+                <img id="hall-modal-image" src="" alt="Hall Image">
+                <div class="hall-info">
+                    <p><strong>Capacity:</strong> <span id="hall-modal-capacity"></span></p>
+                    <p><strong>Facilities:</strong> <span id="hall-modal-facilities"></span></p>
+                    <p><strong>Availability:</strong> <span id="hall-modal-availability"></span></p>
+                    <p id="hall-modal-description"></p>
+                    <a href="book-hall.html" class="cta-button">Book This Hall</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Updated Login Modal -->
+<div id="login-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Login</h2>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" required>
+                <div class="error-message" id="login-email-error"></div>
+            </div>
+            <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" required>
+                <div class="error-message" id="login-password-error"></div>
+            </div>
+            <div class="form-options">
+                <label>
+                    <input type="checkbox" id="remember-me"> Remember me
+                </label>
+                <a href="#" id="forgot-password">Forgot password?</a>
+            </div>
+            <button type="submit" class="submit-btn">Login</button>
+            <div class="form-footer">
+                Don't have an account? <a href="#" id="switch-to-signup">Sign up</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Updated Signup Modal -->
+<div id="signup-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+            <div class="form-group">
+                <label for="signup-name">Full Name</label>
+                <input type="text" id="signup-name" required>
+                <div class="error-message" id="signup-name-error"></div>
+            </div>
+            <div class="form-group">
+                <label for="signup-email">Email</label>
+                <input type="email" id="signup-email" required>
+                <div class="error-message" id="signup-email-error"></div>
+            </div>
+            <div class="form-group">
+                <label for="signup-password">Password</label>
+                <input type="password" id="signup-password" required>
+                <div class="password-strength">
+                    <span class="strength-bar"></span>
+                    <span class="strength-bar"></span>
+                    <span class="strength-bar"></span>
+                    <span class="strength-text" id="password-strength-text">Weak</span>
+                </div>
+                <div class="error-message" id="signup-password-error"></div>
+            </div>
+            <div class="form-group">
+                <label for="signup-confirm-password">Confirm Password</label>
+                <input type="password" id="signup-confirm-password" required>
+                <div class="error-message" id="signup-confirm-password-error"></div>
+            </div>
+            <div class="form-group">
+                <label for="signup-department">Department</label>
+                <select id="signup-department" required>
+                    <option value="">Select Department</option>
+                    <option value="IT">IT</option>
+                    <option value="Administration">Administration</option>
+                    <option value="Finance">Finance</option>
+                    <option value="HR">Human Resources</option>
+                    <option value="Operations">Operations</option>
+                </select>
+                <div class="error-message" id="signup-department-error"></div>
+            </div>
+            <div class="form-group">
+                <label for="signup-phone">Phone Number</label>
+                <input type="tel" id="signup-phone" required>
+                <div class="error-message" id="signup-phone-error"></div>
+            </div>
+            <div class="form-group terms">
+                <label>
+                    <input type="checkbox" id="agree-terms" required>
+                    I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                </label>
+                <div class="error-message" id="terms-error"></div>
+            </div>
+            <button type="submit" class="submit-btn">Create Account</button>
+            <div class="form-footer">
+                Already have an account? <a href="#" id="switch-to-login">Log in</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Forgot Password Modal -->
+<div id="forgot-password-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Reset Password</h2>
+        <form id="forgot-password-form">
+            <div class="form-group">
+                <label for="reset-email">Email</label>
+                <input type="email" id="reset-email" required>
+                <div class="error-message" id="reset-email-error"></div>
+            </div>
+            <button type="submit" class="submit-btn">Send Reset Link</button>
+            <div class="form-footer">
+                Remember your password? <a href="#" id="switch-to-login-from-reset">Log in</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+    <script src="js/script.js"></script>
+    <script src="js/halls.js"></script>
+</body>
+</html>
